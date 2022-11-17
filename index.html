@@ -1,10 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover">
+
     <title>Store notes and learning goals while you are coding</title>
+
+    <!-- Web Manifest File -->
+    <link rel="manifest" href="app.webmanifest">
+
+    <!-- Service Worker Executor Script -->
+    <script src="sw-app.js"></script>
+    
     <link rel="stylesheet" href="styles.css">
+
     <script src="app.js"></script>    
+
+    <!-- Theme Tab Color in Browser -->
+    <meta name="theme-color" content="#ffc252">
+
+     <!-- Icon for Apple Device -->
+    <link rel="apple-touch-icon" href="icons/icon-512.png">
 </head>
 
 <body>
@@ -25,6 +40,13 @@
             <button id="btnLearn">
                 <span class="icon">school</span>                
                 Learn                 
+            </button>
+        </li>
+
+        <li>
+            <button id="btnShare">
+                <span class="icon">share</span>                
+                Share                 
             </button>
         </li>
     </ul>
