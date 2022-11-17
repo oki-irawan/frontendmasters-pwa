@@ -24,6 +24,25 @@ document.addEventListener("DOMContentLoaded", event => {
         location.href = "https://frontendmasters.com";
     })
 
+    let bipEvent = null;
+
+    window.addEventListener("beforeinstallprompt", event => {
+        event.preventDefault();
+        console.log(event);
+        bipEvent = event;
+    })
+
+    document.querySelector("#btnInstall").addEventListener("click", event => {
+        console.log(bipEvent)
+        if (bipEvent) {
+            bipEvent.prompt();
+        } else {
+            // Incompetible browser, PWA isn't passing the criteria, has already installed the PWA
+            // TODO:: show user information on how to install the app
+            alert("To install the app look for Add to Homescreen or Install in your browser's menu");
+        }
+    })
+
     document.querySelector("#btnShare").addEventListener("click", event => {
         let noteString = '';
 
